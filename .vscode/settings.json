@@ -1,0 +1,14 @@
+{
+    "workbench.colorTheme": "Default Light+",
+    "markdown.preview.lineHeight": 2.4,
+    "markdownlint.config":
+    {
+        "MD013": false,
+        "MD033": false,
+        "MD035": false,
+        "MD032": false,
+        "MD029": false,
+        "MD027": false,
+        "MD028": false
+    }
+}
