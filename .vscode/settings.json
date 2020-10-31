@@ -1,6 +1,6 @@
 {
     "workbench.colorTheme": "Default Light+",
-    "markdown.preview.lineHeight": 2.4,
+    "markdown.preview.lineHeight": 2.8,
     "markdown.extension.math.enabled": false,
     "mdmath.delimiters": "gitlab",
     "markdownlint.config":

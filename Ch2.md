@@ -96,7 +96,7 @@ $`\it{G(s)} = \frac{Output}{Input}`$
 >求 $`\frac{輸出}{輸入}`$ 的樣子的過程，就是在求轉移函數  
 >最精簡的例子(只是直觀理解，實際上不應該用此例)：  
 >$`y = f(x) = 2x + 3`$  
->定義 $x$ 為輸入，$`y`$ 為輸出，那 $`3`$ 則為初始條件 
+>定義 $x$ 為輸入，$`y`$ 為輸出，那 $`3`$ 則為初始條件  
 >則轉移函數為 $`\frac{y}{x} = 2`$  
 
 標準流程：
@@ -169,6 +169,8 @@ Recall:
 >>[1]式$`-V + V_L + V_R + V_C = 0`$ 目標是要整理到未知數只剩下 輸入/輸出(I/O)  
 >>利用元件的時域特性代入  
 >>$`\Rightarrow -V + L\frac{d{i_L}}{dt} + i_RR + V_C = 0`$  
+>>$`\Rightarrow L\frac{d{i_L}}{dt} + i_RR + V_C = V`$  
+>>$`\because 電容的時域特性\ \ i_C(t) = C\frac{dV_C(t)}{dt}`$  
 >>$`\Rightarrow LC\frac{d^2V_C}{dt} + RC\frac{dV_C}{dt} + V_C = V`$  
 >>做拉式轉換  
 >>$`\mathcal{L}\rightarrow (LCs^2 + RCs + 1)\hat{V_C}(s) = \hat{V}(s)`$  
@@ -195,7 +197,7 @@ Recall:
 >
 >同理列出Mesh2的式子(轉成頻域)  
 >>$`Ls(\hat{I_2}(s) - \hat{I_1}(s)) + R_2\hat{I_2}(s) + \frac{1}{Cs}\hat{I_2}(s) = 0`$  
->>整理：$`-Ls\hat{I_1}(s) - (Ls + R_2 + \frac{1}{Cs})\hat{I_2}(s) = 0`$  
+>>整理：$`-Ls\hat{I_1}(s) + (Ls + R_2 + \frac{1}{Cs})\hat{I_2}(s) = 0`$  
 >
 >以$`\hat{I_1}(s)`$、$`\hat{I_2}(s)`$為未知數，整理後聯立起來  
 >>$`\begin{cases} (R_1 + Ls)\hat{I_1}(s) - Ls\hat{I_2}(s) = \hat{V(s)} \\ -Ls\hat{I_1}(s) - (Ls + R_2 + \frac{1}{Cs})\hat{I_2}(s) = 0 \end{cases}`$
@@ -229,7 +231,8 @@ $`\Delta_y = \left |\begin{array}{cc} a_1 & c_1 \\ a_2 & c_2 \end{array}\right |
 >>$`\frac{\hat{V_L}(s) - \hat{V}(s)}{R_1} + \frac{\hat{V_L}(s)}{Ls} + \frac{\hat{V_L}(s) - \hat{V_C}(s)}{R_2} = 0`$  
 >
 >節點$`\hat{V_C}(s)`$  
->>$`Cs\hat{V_C}(s) + \frac{\hat{V_C}(s) - \hat{V_L}(s)}{R_2} = 0`$  
+>>$`\frac{\hat{V_C}(s)}{\frac{1}{Cs}} + \frac{\hat{V_C}(s) - \hat{V_L}(s)}{R_2} = 0`$  
+>>$`\Rightarrow Cs\hat{V_C}(s) + \frac{\hat{V_C}(s) - \hat{V_L}(s)}{R_2} = 0`$  
 >
 >為求計算方便，以電導 $`G`$ 代換 電阻 $`R`$，$`G = \frac{1}{R}`$  
 >>節點$`\hat{V_L}(s)`$：$`\Rightarrow G_1(\hat{V_L}(s) - \hat{V}(s)) + \frac{\hat{V_L}(s)}{Ls} + G_2(\hat{V_L}(s) - \hat{V_C}(s)) = 0`$  

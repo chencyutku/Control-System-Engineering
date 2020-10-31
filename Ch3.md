@@ -111,13 +111,13 @@ Output equation:  $`y(t) = Cx(t) + Du(t)`$
 >用KVL列出一種狀態方程式  
 >>把 $`i(t)`$ 當狀態 $`x(t)`$  
 >>>$`-v(t) + Ri(t) + L\frac{di(t)}{dt} + v_C(t) = 0`$  
->>>$`\Rightarrow \frac{di(t)}{dt} = -\frac{R}{L}i(t) + v(t) - v_C(t)`$　　　　----state eq \[1\]  
+>>>$`\Rightarrow \frac{di(t)}{dt} = -\frac{R}{L}i(t) + \frac{v(t)}{L} - \frac{v_C(t)}{L}`$　　　　----state eq \[1\]  
 >>
 >>把 $`v_C(t)`$ 當狀態 $`x(t)`$  
 >>>$`\frac{dv_C(t)}{dt} = \frac{1}{C}i(t)`$　　　　　　　　　　　 ----state eq \[2\]  
 >>
 >輸出方程式  
->>$`v_L(t) = L\frac{di_L(t)}{dt} = L\frac{di(t)}{dt = -Ri(t)} - v_C(t) + v(t)`$  
+>>$`v_L(t) = L\frac{di_L(t)}{dt} = L\frac{di(t)}{dt} = -Ri(t) - v_C(t) + v(t)`$  
 >
 >令狀態空間state為$`x(t) = \left [ \begin{matrix} i(t) \\ v_C(t) \end{matrix} \right ]`$，則可以列式  
 >>狀態方程式：$`\left [ \begin{matrix} \frac{di(t)}{dt} \\ \frac{dv_C(t)}{dt} \end{matrix} \right ] = \left [ \begin{matrix} -\frac{R}{L} && -\frac{1}{L} \\ \frac{1}{C} && 0  \end{matrix} \right ]\left [ \begin{matrix} i(t) \\ v_C(t)  \end{matrix} \right ] + \left [ \begin{matrix} \frac{1}{L} \\ 0 \end{matrix} \right ]v(t)`$  
@@ -242,12 +242,12 @@ accessible(measurable)可計量的
 
 將其拉氏轉換並假設初始條件為0  
 >$`sX(s) = AX(s) + BU(s)`$  
->>移項$`\Rightarrow (sI - A)X(s) = BU(s)`$  
->>移項$`\Rightarrow X(s) = \frac{BU(s)}{(sI-A)}`$  
+>>移項$`\Rightarrow (sI - A)X(s) = BU(s)`$其中  
+>>移項$`\Rightarrow X(s) = (sI-A)^{-1}BU(s)`$  
+>>其中 $`I`$ 為單位矩陣， $`(\ )^{-1}`$為逆矩陣
 >
 >$`Y(s) = CX(s) + DU(s)`$  
->>$`X(s)`$代換掉$`\Rightarrow Y(s) = \frac{C}{sI-A}\times BU(s) + DU(s)`$  
->>$`U(s)`$提出來$`\Rightarrow Y(s) = \frac{C\times B}{sI-A}\times U(s)`$  
-
+>>$`X(s)`$代換掉$`\Rightarrow Y(s) = C(sI-A)^{-1}BU(s) + DU(s)`$  
+>>$`U(s)`$提出來$`\Rightarrow Y(s) = [C(sI-A)^{-1}B]U(s)`$  
 
 ## 3.7 線性化
